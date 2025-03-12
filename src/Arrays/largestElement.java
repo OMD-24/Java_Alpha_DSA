@@ -10,7 +10,7 @@ public class largestElement {
             if (max < Arr[i]) {
                 max = Arr[i];
             }
-//            if (min < Arr[i]) {
+//            if (min < Ar r[i]) {
 //                min = Arr[i];
 //            }
 
