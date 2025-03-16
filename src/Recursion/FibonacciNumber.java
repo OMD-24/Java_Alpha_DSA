@@ -3,6 +3,8 @@ package Recursion;
 import java.util.Scanner;
 
 public class FibonacciNumber {
+
+    // 0 1 1 2 3 5 8 13
     public static int fibo(int n){
         if(n==1){
             return 0;
