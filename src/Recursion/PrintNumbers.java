@@ -8,12 +8,13 @@ public class PrintNumbers {
 
         if(n==1){
             System.out.println("1");
+            return;
         }
 
-       else {
+
             System.out.print(n + " ");
             printNo(n - 1);
-        }
+
     }
 
     public static void main(String [] args){
