@@ -3,7 +3,7 @@ package BackTracking;
 import java.util.Scanner;
 
 public class RatMaze {
-    public static void findWays(int [][]A, int i, int j,boolean [][] B) {
+    public static void findWays(char [][]A, int i, int j,boolean [][] B) {
 
         if (i== A.length || j== A.length || i== -1 || j== -1  || A[i][j] ==0){
             return;
@@ -14,7 +14,9 @@ public class RatMaze {
 
 
         if (i== A.length-1 && j== A.length-1){
-            return;
+            convert(A,B);
+            print(A);
+
         }
 
 
@@ -41,13 +43,12 @@ public class RatMaze {
             findWays(A, i, j - 1,B);
         }
 
-        convert(A,B);
-        print(A);
+
 
 
     }
 
-    public static void convert(int [][]A, boolean [][]B){
+    public static void convert(char [][]A, boolean [][]B){
 
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A.length; j++) {
@@ -72,11 +73,11 @@ public class RatMaze {
 
 
 
-    public static void print(int [][]A){
+    public static void print(char [][]A){
         System.out.println("-------------MAZE-------------");
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A.length; j++) {
-                System.out.print(A[i][j]);
+                System.out.print(A[i][j]+" ");
             }
             System.out.println();
 
@@ -89,10 +90,15 @@ public class RatMaze {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int maze[][] = { { 1, 0, 0, 0 },
-                { 1, 1, 0, 1 },
-                { 0, 1, 0, 0 },
-                { 1, 1, 1, 1 } };
+        char maze[][] = {
+                { 'x', '0', 'x', '0', 'x' },
+                { 'x', 'x', 'x', '0', 'x' },
+                { '0', '0', 'x', '0', 'x' },
+                { 'x', 'x', 'x', 'x', 'x' },
+                { '0', '0', '0', '0', 'x' }
+        };
+
+
 
         int t = maze.length;
 
@@ -102,3 +108,15 @@ public class RatMaze {
         findWays(maze,0,0,B);
     }
 }
+
+
+/*
+*
+ int maze[][] = {
+    { 1, 0, 1, 1, 1 },
+    { 1, 1, 1, 0, 1 },
+    { 0, 0, 1, 0, 1 },
+    { 1, 1, 1, 1, 1 },
+    { 0, 0, 0, 0, 1 }
+};
+*  */
